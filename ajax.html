@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="screen-orientation" content="portrait">
+	<title>ajax</title>
+	<script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		console.log("123");
+		var params = {
+			id:'2',
+			userName:'tangcy'
+		}
+		$.ajax({
+    		url:"http://localhost:8080/demo/getData",
+    		contentType:"application/json",
+			type: "POST",
+  			data:JSON.stringify(params),
+			dataType: "json",  
+  			success:function(res){
+  				debugger;
+  				console.log(res);
+  			},
+			error:function(res){
+				alert('error!');
+			}
+		});
+
+	})
+    	
+</script>
+</head>
+<body>
+<div id="container">
+</div>
+</body>
+</html>
