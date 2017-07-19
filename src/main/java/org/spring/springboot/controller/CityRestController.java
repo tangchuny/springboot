@@ -26,5 +26,12 @@ public class CityRestController {
     	System.out.print("1234");
     	return cityService.findCityByName(cityName);
     }
+    
+    //city列表
+    @RequestMapping(value = "/api/getCityList", method = RequestMethod.GET)
+    
+    public City getCityList(@RequestParam(value = "id", required = true) long id) {
+    	return cityService.findCityById(id);
+    }
 
 }
