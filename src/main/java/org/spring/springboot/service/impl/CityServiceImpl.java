@@ -28,4 +28,11 @@ public class CityServiceImpl implements CityService {
 		return cityDao.findById(id);
 	}
 
+	@Override
+	public City list(String data) {
+		// TODO Auto-generated method stub
+		return cityDao.list(data);
+	}
+
+	
 }

@@ -19,4 +19,5 @@ public interface CityDao {
     City findByName(@Param("cityName") String cityName);
 
 	City findById(@Param("id") long id);
+	City list(String data);
 }
