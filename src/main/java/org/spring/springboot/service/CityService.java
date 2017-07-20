@@ -1,7 +1,6 @@
 package org.spring.springboot.service;
 
-import org.spring.springboot.domain.City;
-
+import org.spring.springboot.model.City;
 
 /**
  * 城市业务逻辑接口类
@@ -15,5 +14,5 @@ public interface CityService {
      * @param cityName
      */
     City findCityByName(String cityName);
-    City findCityById(long id);
+    City findByDes(String descrition);
 }

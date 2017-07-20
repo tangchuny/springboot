@@ -1,7 +1,7 @@
 package org.spring.springboot.controller;
 
-import org.spring.springboot.domain.City;
-import org.spring.springboot.domain.User;
+import org.spring.springboot.model.City;
+import org.spring.springboot.model.UserDemo;
 import org.spring.springboot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 	   @RequestMapping("/getDemo")
 
-	    public User getDemo(){
-		   User demo = new User();
+	    public UserDemo getDemo(){
+		   UserDemo demo = new UserDemo();
 	       demo.setId(1);
 	       demo.setUserName("tangcy");
 	       return demo;//返回的数据已经是json格式的，不需要重新处理
@@ -27,9 +27,9 @@ public class DemoController {
 	   
 	   @RequestMapping(value="/getData", method = RequestMethod.POST)    
 	   @ResponseBody  
-	      public User getData(@RequestBody User user){  
+	      public UserDemo getData(@RequestBody UserDemo user){  
 		   System.out.print("接收的参数哦:"+user.getUserName());
-		   User u = new User();  
+		   UserDemo u = new UserDemo();  
 	       u.setId(user.getId());  
 	       u.setUserName(user.getUserName());  
 	       return u;  

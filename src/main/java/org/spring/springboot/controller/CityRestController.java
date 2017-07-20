@@ -1,7 +1,6 @@
 package org.spring.springboot.controller;
 
-
-import org.spring.springboot.domain.City;
+import org.spring.springboot.model.City;
 import org.spring.springboot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
 
 /**
  * Created by bysocket on 07/02/2017.
@@ -30,8 +30,9 @@ public class CityRestController {
     //city列表
     @RequestMapping(value = "/api/getCityList", method = RequestMethod.GET)
     
-    public City getCityList(@RequestParam(value = "id", required = true) long id) {
-    	return cityService.findCityById(id);
+    public City getCityList(@RequestParam(value = "description", required = true) String description) {
+    	return cityService.findByDes(description);
     }
+    
 
 }

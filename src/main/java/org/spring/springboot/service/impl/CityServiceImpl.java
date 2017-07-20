@@ -1,8 +1,7 @@
 package org.spring.springboot.service.impl;
 
 import org.spring.springboot.dao.CityDao;
-
-import org.spring.springboot.domain.City;
+import org.spring.springboot.model.City;
 import org.spring.springboot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,10 +22,11 @@ public class CityServiceImpl implements CityService {
     }
 //test
 	@Override
-	public City findCityById(long id) {
+	public City findByDes(String description) {
 		// TODO Auto-generated method stub
-		return cityDao.findById(id);
+		return cityDao.findByDes(description);
 	}
+	
 
 	
 }

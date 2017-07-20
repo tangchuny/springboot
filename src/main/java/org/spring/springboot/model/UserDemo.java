@@ -1,6 +1,6 @@
-package org.spring.springboot.domain;
+package org.spring.springboot.model;
 
-public class User {
+public class UserDemo {
     private Integer id;
 
     private String userName;
