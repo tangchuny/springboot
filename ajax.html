@@ -12,12 +12,14 @@
 	<script type="text/javascript">
 	$(function(){
 		console.log("123");
-		var params = {
-			id:'2',
-			userName:'tangcy'
+		var ID = "1";
+		var params  = {
+			
+			username:"12323",
+			
 		}
 		$.ajax({
-    		url:"http://localhost:8080/demo/getData",
+    		url:"http://localhost:8080/users/find",
     		contentType:"application/json",
 			type: "POST",
   			data:JSON.stringify(params),

@@ -4,7 +4,7 @@
 
 
   <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-    insert into user (username, password, name
+    insert into t_user (username, password, name
       )
     values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}
       )
@@ -41,7 +41,7 @@
 </select>
     <!--通过用户id获取角色名-->
     <select id="getRoleNamesByUserId" resultType="string">
-        SELECT roleName from role r left join user_role ur on r.id = ur.roleId left join user u on ur.userId = u.id
+        SELECT roleName from role r left join user_role ur on r.id = ur.roleId left join t_user u on ur.userId = u.id
          where u.id=#{userId}
     </select>
     <!--通过用户id获取权限名-->

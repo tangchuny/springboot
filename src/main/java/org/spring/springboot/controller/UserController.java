@@ -36,14 +36,23 @@ public class UserController {
         return new AjaxResult(true,"编辑成功");
     }
     @RequestMapping(value = "/",method = RequestMethod.POST)
-    public AjaxResult add( User user){
+    public AjaxResult add( @RequestBody User user){
+    	logger.info("添加的数据："+user);
         userService.save(user);
         return new AjaxResult(true,"添加成功");
     }
     @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
     public AjaxResult delete( @PathVariable Long id){
+    	logger.info("delete id:"+id);
         userService.delete(id);
         return new AjaxResult(true,"添加成功");
+    }
+    
+    @RequestMapping(value = "/find",method = RequestMethod.POST)
+    public User findByUsername( @RequestBody String  username){
+    	logger.info("username===="+username);
+    	User user = userService.findByUsername(username);
+    	return  user;
     }
 
 }

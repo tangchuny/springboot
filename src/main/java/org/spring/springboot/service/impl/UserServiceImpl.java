@@ -5,6 +5,7 @@ package org.spring.springboot.service.impl;/**
  * Time: 14:20
  * To change this template use File | Settings | File Templates.
  */
+import org.slf4j.Logger;
 
 import org.spring.springboot.dao.UserMapper;
 import org.spring.springboot.model.User;
@@ -51,6 +52,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public User findByUsername(String username) {
+    	System.out.print("service:"+username);
         return userMapper.findByUsername(username);
     }
 
